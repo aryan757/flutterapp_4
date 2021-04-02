@@ -2,7 +2,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app4/utils/auth_helper.dart';
 
-
 class SignupPage extends StatefulWidget {
   @override
   _SignupPageState createState() => _SignupPageState();
@@ -25,45 +24,123 @@ class _SignupPageState extends State<SignupPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
+        child: Container(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              const SizedBox(height: 100.0),
-              Text(
-                "Sign Up",
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
+              Container(
+                //jatin
+                width: MediaQuery.of(context).size.width,
+                child: Image.asset(
+                  'assets/frame.png',
+                  fit: BoxFit.fill,
+                ),
+              ),
+              const SizedBox(height: 50.0),
+              Container(
+                //jatin
+                margin: EdgeInsets.only(left: 20),
+                alignment: Alignment.topLeft,
+                child: Text("Login",
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 25,
+                        fontWeight: FontWeight.w400)),
               ),
               const SizedBox(height: 20.0),
+              Padding(
+                padding: const EdgeInsets.all(20),
+                child: Center(
+                  child: TextFormField(
+                    controller: _emailController,
+                    autocorrect: true,
+                    maxLines: 1,
+                    keyboardType: TextInputType.emailAddress,
+                    autofocus: false,
+                    decoration: InputDecoration(
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Colors.blue,
+                          width: 1.2,
+                        ),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Colors.yellow,
+                          width: 1.2,
+                        ),
+                      ),
+                      border: InputBorder.none,
+                      floatingLabelBehavior: FloatingLabelBehavior.auto,
+                      hintText: 'Email',
+                      labelText: 'Email',
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 10.0),
+              Padding(
+                padding: const EdgeInsets.all(20),
+                child: Center(
+                  child: TextFormField(
+                    controller: _passwordController,
+                    autocorrect: true,
+                    maxLines: 1,
+                    autofocus: false,
+                    decoration: InputDecoration(
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Colors.blue,
+                          width: 1.2,
+                        ),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Colors.yellow,
+                          width: 1.2,
+                        ),
+                      ),
+                      border: InputBorder.none,
+                      floatingLabelBehavior: FloatingLabelBehavior.auto,
+                      hintText: 'Password',
+                      labelText: 'Password',
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(20),
+                child: Center(
+                  child: TextFormField(
+                    controller: _confirmPasswordController,
+                    autocorrect: true,
+                    maxLines: 1,
+                    autofocus: false,
+                    decoration: InputDecoration(
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Colors.blue,
+                          width: 1.2,
+                        ),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Colors.yellow,
+                          width: 1.2,
+                        ),
+                      ),
+                      border: InputBorder.none,
+                      floatingLabelBehavior: FloatingLabelBehavior.auto,
+                      hintText: 'Confirm Password',
+                      labelText: 'Confirm Password',
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 10.0),
               RaisedButton(
-                child: Text("Continue with Google"),
-                onPressed: () async {
-                  try {
-                    await AuthHelper.signInWithGoogle();
-                  } catch (e) {
-                    print(e);
-                  }
-                },
-              ),
-              TextField(
-                controller: _emailController,
-                decoration: InputDecoration(hintText: "Enter email"),
-              ),
-              const SizedBox(height: 10.0),
-              TextField(
-                controller: _passwordController,
-                obscureText: true,
-                decoration: InputDecoration(hintText: "Enter password"),
-              ),
-              const SizedBox(height: 10.0),
-              TextField(
-                controller: _confirmPasswordController,
-                obscureText: true,
-                decoration: InputDecoration(hintText: "Confirm password"),
-              ),
-              const SizedBox(height: 10.0),
-              RaisedButton(
+                elevation: 3,
+                color: Colors.blueAccent,
                 child: Text("Signup"),
                 onPressed: () async {
                   if (_emailController.text.isEmpty ||
