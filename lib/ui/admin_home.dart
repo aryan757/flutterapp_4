@@ -8,7 +8,7 @@ class AdminHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('AdminHome'),
+        title: Text('Admin Home'),
       ),
       body: SingleChildScrollView(
         child: Column(
