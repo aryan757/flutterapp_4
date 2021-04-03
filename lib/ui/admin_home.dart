@@ -1,4 +1,3 @@
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app4/utils/auth_helper.dart';
@@ -16,7 +15,7 @@ class AdminHomePage extends StatelessWidget {
           children: <Widget>[
             StreamBuilder(
               stream:
-              FirebaseFirestore.instance.collection("users").snapshots(),
+                  FirebaseFirestore.instance.collection("users").snapshots(),
               builder: (BuildContext context,
                   AsyncSnapshot<QuerySnapshot> snapshot) {
                 if (snapshot.hasData && snapshot.data != null) {
