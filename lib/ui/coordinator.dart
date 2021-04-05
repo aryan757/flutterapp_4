@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app4/utils/auth_helper.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'homepage.dart';
 
 class CoordinatorFlow extends StatefulWidget {
   @override
@@ -130,8 +130,7 @@ class _CoordinatorFlowState extends State<CoordinatorFlow> {
             padding: const EdgeInsets.all(8.0),
             child: ListTile(
               onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => HomePage()));
+                AuthHelper.logOut();
               },
               autofocus: true,
               hoverColor: Colors.blueAccent,
