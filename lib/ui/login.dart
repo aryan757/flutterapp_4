@@ -1,4 +1,3 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app4/ui/signup.dart';
@@ -116,7 +115,10 @@ class _LoginPageState extends State<LoginPage> {
                 child: RaisedButton(
                   elevation: 3,
                   color: Colors.blueAccent,
-                  child: Text("Login"),
+                  child: Text(
+                    "Login",
+                    style: TextStyle(color: Colors.white),
+                  ),
                   onPressed: () async {
                     if (_emailController.text.isEmpty ||
                         _passwordController.text.isEmpty) {
@@ -136,16 +138,18 @@ class _LoginPageState extends State<LoginPage> {
                   },
                 ),
               ),
-
-              TextButton(
-                child: Text("Create Account"),
-                onPressed: () async {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (_) => SignupPage(),
-                      ));
-                },
+              Container(
+                alignment: Alignment.center,
+                child: TextButton(
+                  child: Text("Create Account"),
+                  onPressed: () async {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => SignupPage(),
+                        ));
+                  },
+                ),
               )
             ],
           ),

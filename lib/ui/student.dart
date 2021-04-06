@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'homepage.dart';
 
 class StudentFlow extends StatefulWidget {
   @override
@@ -129,10 +128,7 @@ class _StudentFlowState extends State<StudentFlow> {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: ListTile(
-              onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => HomePage()));
-              },
+              onTap: () {},
               autofocus: true,
               hoverColor: Colors.blueAccent,
               leading: Icon(

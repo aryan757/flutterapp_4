@@ -1,3 +1,4 @@
+import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_app4/utils/auth_helper.dart';
@@ -141,7 +142,10 @@ class _SignupPageState extends State<SignupPage> {
               RaisedButton(
                 elevation: 3,
                 color: Colors.blueAccent,
-                child: Text("Signup"),
+                child: Text(
+                  "Signup",
+                  style: TextStyle(color: Colors.white),
+                ),
                 onPressed: () async {
                   if (_emailController.text.isEmpty ||
                       _passwordController.text.isEmpty) {
