@@ -35,7 +35,9 @@ dependencies:
   device_info: ^2.0.0
   package_info: ^2.0.0
   google_fonts:
-
+  smooth_star_rating:
+  flutter_simple_rating_bar:
+  percent_indicator:
 dev_dependencies:
   flutter_test:
     sdk: flutter

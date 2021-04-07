@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app4/ui/Admin/teacher_list.dart';
 
 class ChangeCo extends StatefulWidget {
   @override
@@ -13,8 +14,48 @@ class _ChangeCoState extends State<ChangeCo> {
         title: Text('Change Coordinator'),
         elevation: 1,
       ),
-      body: Center(
-        child: Text('Change Coordinator for Admin'),
+      body: SingleChildScrollView(
+        child: Center(
+            child: ListView(
+          children: [
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (BuildContext context) => TeacherList()));
+              },
+              child: Card(
+                elevation: 10,
+                child: Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+                  child: Text(
+                    'Team 1',
+                  ),
+                ),
+              ),
+            ),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (BuildContext context) => TeacherList()));
+              },
+              child: Card(
+                elevation: 10,
+                child: Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+                  child: Text(
+                    'Team 2',
+                  ),
+                ),
+              ),
+            ),
+          ],
+        )),
       ),
     );
   }

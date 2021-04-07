@@ -10,21 +10,22 @@ import 'package:flutter_app4/ui/Coordinator/Monitor_Co.dart';
 import 'package:flutter_app4/ui/Coordinator/Synopsis_co.dart';
 import 'package:flutter_app4/ui/Coordinator/projectstat_co.dart';
 import 'package:flutter_app4/ui/Coordinator/view_teams.dart';
+import 'package:flutter_app4/ui/User/Monitor_Co.dart';
+import 'package:flutter_app4/ui/User/synopsis.dart';
 import 'package:flutter_app4/utils/auth_helper.dart';
 
 import 'package:google_fonts/google_fonts.dart';
 
-class CoordinatorFlow extends StatefulWidget {
+class UserFlow extends StatefulWidget {
   @override
-  _CoordinatorFlowState createState() => _CoordinatorFlowState();
+  _UserFlowState createState() => _UserFlowState();
 }
 
-class _CoordinatorFlowState extends State<CoordinatorFlow> {
+class _UserFlowState extends State<UserFlow> {
   int index = 0;
   List<Widget> list = [
-    MonitorMyteamCo(),
-    SynoCo(),
-    ViewTeam(),
+    MonitorMyteamU(),
+    AppSynoU(),
     ProStatCo(),
   ];
   @override
@@ -68,7 +69,7 @@ class MyDrawer extends StatelessWidget {
                 currentAccountPicture: CircleAvatar(
                   backgroundColor: Colors.white,
                 ),
-                accountName: Text('Coordinator',
+                accountName: Text('User',
                     style: GoogleFonts.raleway(
                         fontSize: 17.0, color: Colors.black26)),
                 accountEmail: Text(
@@ -106,7 +107,7 @@ class MyDrawer extends StatelessWidget {
                   color: Colors.black,
                 ),
                 title: Text(
-                  'Synopsis Approval',
+                  'Synopsis',
                   style: GoogleFonts.raleway(color: Colors.black, fontSize: 14),
                   softWrap: true,
                   textAlign: TextAlign.left,
@@ -121,25 +122,6 @@ class MyDrawer extends StatelessWidget {
                 hoverColor: Colors.blueAccent,
                 leading: Icon(
                   Icons.ac_unit,
-                  size: 25,
-                  color: Colors.black,
-                ),
-                title: Text(
-                  'View Teams',
-                  style: GoogleFonts.raleway(color: Colors.black, fontSize: 14),
-                  softWrap: true,
-                  textAlign: TextAlign.left,
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: ListTile(
-                onTap: () => onTap(context, 3),
-                autofocus: true,
-                hoverColor: Colors.blueAccent,
-                leading: Icon(
-                  Icons.priority_high_outlined,
                   size: 25,
                   color: Colors.black,
                 ),

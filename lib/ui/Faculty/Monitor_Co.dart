@@ -1,24 +1,26 @@
-import 'package:flutter/material.dart';
-import 'package:percent_indicator/percent_indicator.dart';
+import 'dart:html';
 
-class ProStatCo extends StatefulWidget {
+import 'package:flutter/material.dart';
+import 'package:flutter_app4/ui/Admin/admin.dart';
+
+class MonitorMyteamF extends StatefulWidget {
   @override
-  _ProStatCoState createState() => _ProStatCoState();
+  _MonitorMyteamFState createState() => _MonitorMyteamFState();
 }
 
-class _ProStatCoState extends State<ProStatCo> {
+class _MonitorMyteamFState extends State<MonitorMyteamF> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: new AppBar(
-          title: Text('Project Status'),
+          title: Text('Monitor My Team'),
           elevation: 1,
         ),
-        body: _cardprojectstatusCo(context));
+        body: _cardlist(context));
   }
 }
 
-Widget _cardprojectstatusCo(BuildContext context) {
+Widget _cardlist(BuildContext context) {
   return ListView(
     children: [
       GestureDetector(
@@ -32,19 +34,7 @@ Widget _cardprojectstatusCo(BuildContext context) {
                     Text('Aashutosh, Dhiraj, Aryan, Jatin'),
                     Text('Project title'),
                     Text('Guide'),
-                    LinearPercentIndicator(
-                      width: 140.0,
-                      lineHeight: 14.0,
-                      percent: 0.5,
-                      center: Text(
-                        "50.0%",
-                        style: new TextStyle(fontSize: 12.0),
-                      ),
-                      trailing: Icon(Icons.mood),
-                      linearStrokeCap: LinearStrokeCap.roundAll,
-                      backgroundColor: Colors.grey,
-                      progressColor: Colors.blue,
-                    ),
+                    Text('Progress'),
                   ],
                 );
               });

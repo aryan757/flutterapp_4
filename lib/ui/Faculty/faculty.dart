@@ -14,12 +14,12 @@ import 'package:flutter_app4/utils/auth_helper.dart';
 
 import 'package:google_fonts/google_fonts.dart';
 
-class CoordinatorFlow extends StatefulWidget {
+class FacFlow extends StatefulWidget {
   @override
-  _CoordinatorFlowState createState() => _CoordinatorFlowState();
+  _FacFlowState createState() => _FacFlowState();
 }
 
-class _CoordinatorFlowState extends State<CoordinatorFlow> {
+class _FacFlowState extends State<FacFlow> {
   int index = 0;
   List<Widget> list = [
     MonitorMyteamCo(),
@@ -68,7 +68,7 @@ class MyDrawer extends StatelessWidget {
                 currentAccountPicture: CircleAvatar(
                   backgroundColor: Colors.white,
                 ),
-                accountName: Text('Coordinator',
+                accountName: Text('Faculty',
                     style: GoogleFonts.raleway(
                         fontSize: 17.0, color: Colors.black26)),
                 accountEmail: Text(

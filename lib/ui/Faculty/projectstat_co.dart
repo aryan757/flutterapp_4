@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 
-class ProStatCo extends StatefulWidget {
+class ProStatF extends StatefulWidget {
   @override
-  _ProStatCoState createState() => _ProStatCoState();
+  _ProStatFState createState() => _ProStatFState();
 }
 
-class _ProStatCoState extends State<ProStatCo> {
+class _ProStatFState extends State<ProStatF> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class SynoCo extends StatefulWidget {
+class SynoF extends StatefulWidget {
   @override
-  _SynoCoState createState() => _SynoCoState();
+  _SynoFState createState() => _SynoFState();
 }
 
-class _SynoCoState extends State<SynoCo> {
+class _SynoFState extends State<SynoF> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,7 +14,7 @@ class _SynoCoState extends State<SynoCo> {
         elevation: 1,
       ),
       body: Center(
-        child: Text('Synopsis list for Coordinator'),
+        child: Text('Synopsis list for Faclulty'),
       ),
     );
   }
