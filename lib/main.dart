@@ -2,12 +2,13 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import './ui/Admin/admin.dart';
-
+import 'package:flutter_app4/home.dart';
+import 'package:flutter_app4/ui/Admin/admin.dart';
 import 'package:flutter_app4/ui/Coordinator/coordinator.dart';
-
+import 'package:flutter_app4/ui/User/User.dart';
 import 'package:flutter_app4/ui/login.dart';
 import 'package:flutter_app4/utils/auth_helper.dart';
+
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -49,7 +50,11 @@ class MainScreen extends StatelessWidget {
                   final user = userDoc.data();
                   if (user['role'] == 'admin') {
                     return AdminFlow();
-                  } else {
+                  } if(user['role']=='newuser'){
+                    return UserFlow();
+                  }
+
+                  else {
                     return CoordinatorFlow();
                   }
                 } else {
