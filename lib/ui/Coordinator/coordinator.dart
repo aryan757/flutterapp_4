@@ -8,6 +8,7 @@ import 'package:flutter_app4/ui/Admin/Project_status.dart';
 import 'package:flutter_app4/ui/Admin/eval_report.dart';
 import 'package:flutter_app4/ui/Coordinator/Monitor_Co.dart';
 import 'package:flutter_app4/ui/Coordinator/Synopsis_co.dart';
+import 'package:flutter_app4/ui/Coordinator/creategroup.dart';
 import 'package:flutter_app4/ui/Coordinator/projectstat_co.dart';
 import 'package:flutter_app4/ui/Coordinator/view_teams.dart';
 import 'package:flutter_app4/utils/auth_helper.dart';
@@ -26,6 +27,7 @@ class _CoordinatorFlowState extends State<CoordinatorFlow> {
     SynoCo(),
     ViewTeam(),
     ProStatCo(),
+    CreateGrp()
   ];
   @override
   Widget build(BuildContext context) {
@@ -145,6 +147,25 @@ class MyDrawer extends StatelessWidget {
                 ),
                 title: Text(
                   'Project Status',
+                  style: GoogleFonts.raleway(color: Colors.black, fontSize: 14),
+                  softWrap: true,
+                  textAlign: TextAlign.left,
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: ListTile(
+                onTap: () => onTap(context, 4),
+                autofocus: true,
+                hoverColor: Colors.blueAccent,
+                leading: Icon(
+                  Icons.home_outlined,
+                  size: 25,
+                  color: Colors.black,
+                ),
+                title: Text(
+                  'Create Groups',
                   style: GoogleFonts.raleway(color: Colors.black, fontSize: 14),
                   softWrap: true,
                   textAlign: TextAlign.left,
