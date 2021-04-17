@@ -50,14 +50,18 @@ class MainScreen extends StatelessWidget {
                   final user = userDoc.data();
                   if (user['role'] == 'admin') {
                     return AdminFlow();
-                  } if(user['role']=='newuser'){
+                  }else if(user['role']=='newuser'){
                     return UserFlow();
                   }
+                  else if(user['role']=='newuser1'){
+                    return StudentFlow();
+                  }
+                  
 
                   else {
                     return CoordinatorFlow();
                   }
-                } else {
+                } else { 
                   return Material(
                     child: Center(
                       child: CircularProgressIndicator(),
