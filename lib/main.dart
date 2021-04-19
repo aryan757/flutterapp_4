@@ -53,6 +53,9 @@ class MainScreen extends StatelessWidget {
                   }else if(user['role']=='newuser'){
                     return UserFlow();
                   }
+                  else if(user['role']=='newuser2'){
+                    return FacFlow();
+                  }
                   else if(user['role']=='newuser1'){
                     return StudentFlow();
                   }
