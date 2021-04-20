@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_simple_rating_bar/flutter_simple_rating_bar.dart';
 
 class ProjectUser extends StatefulWidget {
   @override
@@ -26,7 +25,6 @@ class _ProjectUserState extends State<ProjectUser> {
               Text('Guide'),
               LinearProgressIndicator(
                 backgroundColor: Colors.grey,
-                color: Colors.blue,
                 value: 1,
               )
             ],

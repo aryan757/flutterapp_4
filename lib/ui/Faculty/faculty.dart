@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_app4/ui/Admin/App_synopsis.dart';
 import 'package:flutter_app4/ui/Admin/ChangeCo.dart';

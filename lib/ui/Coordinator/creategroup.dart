@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app4/ui/Coordinator/choosedomain.dart';
@@ -38,6 +36,8 @@ class CreateGrpState extends State<CreateGrp> {
             width: MediaQuery.of(context).size.width,
           ),
           new ListView.builder(
+              scrollDirection: Axis.vertical,
+              shrinkWrap: true,
               itemCount: checkBoxListTileModel.length,
               itemBuilder: (BuildContext context, int index) {
                 return new Card(
