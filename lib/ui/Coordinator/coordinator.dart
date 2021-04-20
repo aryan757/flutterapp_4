@@ -27,7 +27,7 @@ class _CoordinatorFlowState extends State<CoordinatorFlow> {
     SynoCo(),
     ViewTeam(),
     ProStatCo(),
-    CreateGrp()
+    CreateGrp(),
   ];
   @override
   Widget build(BuildContext context) {
