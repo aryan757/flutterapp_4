@@ -44,6 +44,8 @@ class CreateTeacherState extends State<CreateTeacher> {
             ),
           ),
           new ListView.builder(
+              scrollDirection: Axis.vertical,
+              shrinkWrap: true,
               itemCount: checkBoxListTileModel.length,
               itemBuilder: (BuildContext context, int index) {
                 return new Card(
