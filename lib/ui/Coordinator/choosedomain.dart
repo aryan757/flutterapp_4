@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app4/ui/Coordinator/Chooseteacher.dart';
 import 'package:flutter_app4/ui/Coordinator/creategroup.dart';
 
 class CreateDomain extends StatefulWidget {
@@ -43,7 +44,7 @@ class CreateDomainState extends State<CreateDomain> {
                           context,
                           MaterialPageRoute(
                               builder: (BuildContext context) =>
-                                  CreateDomain()));
+                                  CreateTeacher()));
                     },
                     child: Text('Choose Domain')),
               ],
