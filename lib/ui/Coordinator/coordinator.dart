@@ -25,7 +25,6 @@ class _CoordinatorFlowState extends State<CoordinatorFlow> {
     SynoCo(),
     ViewTeam(),
     ProStatCo(),
-    CreateGrp(),
   ];
   @override
   Widget build(BuildContext context) {
@@ -154,7 +153,12 @@ class MyDrawer extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: ListTile(
-                onTap: () => onTap(context, 4),
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (BuildContext) => CreateGrp()));
+                },
                 autofocus: true,
                 hoverColor: Colors.blueAccent,
                 leading: Icon(

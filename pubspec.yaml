@@ -38,6 +38,7 @@ dependencies:
   smooth_star_rating:
   flutter_simple_rating_bar:
   percent_indicator:
+  multi_select_flutter:
 dev_dependencies:
   flutter_test:
     sdk: flutter
