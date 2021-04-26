@@ -66,6 +66,7 @@ class CreateGrpState extends State<CreateGrp> {
         centerTitle: true,
         actions: [
           IconButton(
+              alignment: Alignment.topLeft,
               icon: Icon(
                 Icons.arrow_back,
                 color: Colors.black,
@@ -203,7 +204,7 @@ class CreateGrpState extends State<CreateGrp> {
                         msg: "Group is Created",
                         backgroundColor: Colors.black,
                         textColor: Colors.white,
-                        gravity: ToastGravity.CENTER,
+                        gravity: ToastGravity.BOTTOM,
                         fontSize: 16,
                       );
                     },
