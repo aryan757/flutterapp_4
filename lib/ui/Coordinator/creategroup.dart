@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:multi_select_flutter/multi_select_flutter.dart';
@@ -184,7 +185,17 @@ class CreateGrpState extends State<CreateGrp> {
                       "Save Group",
                       style: TextStyle(color: Colors.white),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Map<String, dynamic> data = {
+                        "name1": _selectedstudent2[0].name,
+                        "name2": _selectedstudent2[1].name,
+                        "name3": _selectedstudent2[2].name,
+                        "name4": _selectedstudent2[3].name,
+                        "domain": _choosenvalue.toString(),
+                        "guide": _selectedstudent3[0].name,
+                      };
+                      FirebaseFirestore.instance.collection("groups").add(data);
+                    },
                   ),
                 ),
               ],
