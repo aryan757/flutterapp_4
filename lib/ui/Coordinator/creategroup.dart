@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:multi_select_flutter/multi_select_flutter.dart';
 import './Studentclass.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class CreateGrp extends StatefulWidget {
   @override
@@ -65,7 +66,10 @@ class CreateGrpState extends State<CreateGrp> {
         centerTitle: true,
         actions: [
           IconButton(
-              icon: Icon(Icons.arrow_back),
+              icon: Icon(
+                Icons.arrow_back,
+                color: Colors.black,
+              ),
               onPressed: () {
                 Navigator.pop(context);
               })
@@ -195,6 +199,13 @@ class CreateGrpState extends State<CreateGrp> {
                         "guide": _selectedstudent3[0].name,
                       };
                       FirebaseFirestore.instance.collection("groups").add(data);
+                      Fluttertoast.showToast(
+                        msg: "Group is Created",
+                        backgroundColor: Colors.black,
+                        textColor: Colors.white,
+                        gravity: ToastGravity.CENTER,
+                        fontSize: 16,
+                      );
                     },
                   ),
                 ),

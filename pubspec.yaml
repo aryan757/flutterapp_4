@@ -39,6 +39,7 @@ dependencies:
   flutter_simple_rating_bar:
   percent_indicator:
   multi_select_flutter:
+  fluttertoast:
 dev_dependencies:
   flutter_test:
     sdk: flutter
