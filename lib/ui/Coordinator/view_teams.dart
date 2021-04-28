@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 class ViewTeam extends StatefulWidget {
@@ -13,84 +14,72 @@ class _ViewTeamState extends State<ViewTeam> {
         title: Text('View Team'),
         elevation: 1,
       ),
-      body: Center(child: _viewTeams(context)),
+      body: StreamBuilder(
+        stream: FirebaseFirestore.instance.collection('groups').snapshots(),
+        builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+          if (!snapshot.hasData) {
+            return Text('No Data');
+          }
+          return ListView(
+            addAutomaticKeepAlives: false,
+            scrollDirection: Axis.vertical,
+            padding: EdgeInsets.all(10),
+            shrinkWrap: true,
+            children: snapshot.data.docs.map((document) {
+              return Center(
+                child: Container(
+                  width: MediaQuery.of(context).size.width / 1.2,
+                  height: MediaQuery.of(context).size.height / 6,
+                  child: Card(
+                    elevation: 3,
+                    child: Column(
+                      children: [
+                        Text(
+                          'Guide:' + document['guide'].toString(),
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            color: Colors.blueAccent,
+                            fontSize: 20,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                        Text(
+                          'domain:' + document['domain'].toString(),
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            color: Colors.pinkAccent,
+                            fontSize: 18,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                        Row(
+                          children: [
+                            Text(
+                              'Team:' +
+                                  document['name1'].toString() +
+                                  "  " +
+                                  document['name2'].toString() +
+                                  "  " +
+                                  document['name3'].toString() +
+                                  "  " +
+                                  document['name4'].toString(),
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 16,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              );
+            }).toList(),
+          );
+        },
+      ),
     );
   }
-}
-
-Widget _viewTeams(BuildContext context) {
-  return ListView(
-    children: [
-      GestureDetector(
-        onTap: () {
-          showDialog(
-              context: context,
-              builder: (BuildContext context) {
-                AboutDialog(
-                  children: [
-                    Text('Team 1'),
-                    Text('Aashutosh, Dhiraj, Aryan, Jatin'),
-                    Text('Project title'),
-                    Text('Guide'),
-                    Text('Progress'),
-                  ],
-                );
-              });
-        },
-        child: Card(
-          elevation: 10,
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
-            child: Text(
-              'Team 1',
-            ),
-          ),
-        ),
-      ),
-      GestureDetector(
-        onTap: () {
-          showDialog(
-              context: context,
-              builder: (BuildContext context) {
-                AboutDialog(
-                  children: [
-                    Text('Team 2'),
-                    Text('Aashutosh, Dhiraj, Aryan, Jatin'),
-                    Text('Project title'),
-                    Text('Guide'),
-                    Text('Progress'),
-                  ],
-                );
-              });
-        },
-        child: Card(
-          elevation: 10,
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
-            child: Text(
-              'Team 2',
-            ),
-          ),
-        ),
-      ),
-      Card(
-        elevation: 10,
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
-          child: Text(
-            'Team 3',
-          ),
-        ),
-      ),
-      Card(
-        elevation: 10,
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
-          child: Text(
-            'Team 4',
-          ),
-        ),
-      ),
-    ],
-  );
 }
