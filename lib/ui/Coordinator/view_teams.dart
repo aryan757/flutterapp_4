@@ -33,9 +33,11 @@ class _ViewTeamState extends State<ViewTeam> {
                   child: Card(
                     elevation: 3,
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         Text(
-                          'Guide:' + document['guide'].toString(),
+                          document['guide'].toString(),
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             color: Colors.blueAccent,
@@ -44,7 +46,7 @@ class _ViewTeamState extends State<ViewTeam> {
                           ),
                         ),
                         Text(
-                          'domain:' + document['domain'].toString(),
+                          document['domain'].toString(),
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             color: Colors.pinkAccent,
@@ -53,10 +55,10 @@ class _ViewTeamState extends State<ViewTeam> {
                           ),
                         ),
                         Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Team:' +
-                                  document['name1'].toString() +
+                              document['name1'].toString() +
                                   "  " +
                                   document['name2'].toString() +
                                   "  " +
