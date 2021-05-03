@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -18,16 +20,16 @@ class CreateGrpState extends State<CreateGrp> {
   String _choosenvalue;
 
   static List<Student> stu = [
-    Student(id: 1, name: "Jatin"),
-    Student(id: 2, name: "Dhiraj"),
-    Student(id: 3, name: "Ashutosh"),
-    Student(id: 4, name: "Aryan"),
-    Student(id: 5, name: "Modi"),
-    Student(id: 6, name: "Mangyani"),
-    Student(id: 7, name: "Deepu"),
-    Student(id: 8, name: "Aviral"),
-    Student(id: 9, name: "Anuj"),
-    Student(id: 10, name: "Harshit"),
+    Student(id: 1, name: "Jatin", usn: "1NT17IS073"),
+    Student(id: 2, name: "Dhiraj", usn: "1NT17IS074"),
+    Student(id: 3, name: "Ashutosh", usn: "1NT17IS075"),
+    Student(id: 4, name: "Aryan", usn: "1NT17IS034"),
+    Student(id: 5, name: "Modi", usn: "1NT17IS0001"),
+    Student(id: 6, name: "Mangyani", usn: "1NT17IS085"),
+    Student(id: 7, name: "Deepu", usn: "1NT17IS095"),
+    Student(id: 8, name: "Aviral", usn: "1NT17IS092"),
+    Student(id: 9, name: "Anuj", usn: "1NT17IS065"),
+    Student(id: 10, name: "Harshit", usn: "1NT17IS055"),
   ];
   static List<Student> teac = [
     Student(id: 1, name: "Sanjay HA"),
@@ -39,6 +41,7 @@ class CreateGrpState extends State<CreateGrp> {
     Student(id: 7, name: "DR.Aditya Shastry"),
     Student(id: 8, name: "DR.DB Srinivas"),
   ];
+  var myint = Random().nextInt(100);
 
   final _items = stu
       .map((student) => MultiSelectItem<Student>(student, student.name))
@@ -49,6 +52,7 @@ class CreateGrpState extends State<CreateGrp> {
   List<Student> _selectedstudent2 = [];
   List<Student> _selectedstudent3 = [];
   List<Student> _selectedstudent4 = [];
+  List _selectedstudent5 = [];
 
   final _multiSelectKey = GlobalKey<FormFieldState>();
   @override
@@ -193,9 +197,13 @@ class CreateGrpState extends State<CreateGrp> {
                     onPressed: () {
                       Map<String, dynamic> data = {
                         "name1": _selectedstudent2[0].name,
+                        "usn1": _selectedstudent2[0].usn,
                         "name2": _selectedstudent2[1].name,
+                        "usn2": _selectedstudent2[1].usn,
                         "name3": _selectedstudent2[2].name,
+                        "usn3": _selectedstudent2[2].usn,
                         "name4": _selectedstudent2[3].name,
+                        "usn4": _selectedstudent2[3].usn,
                         "domain": _choosenvalue.toString(),
                         "guide": _selectedstudent3[0].name,
                       };

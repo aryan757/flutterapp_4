@@ -40,6 +40,7 @@ dependencies:
   percent_indicator:
   multi_select_flutter:
   fluttertoast:
+  short_readable_id:
 dev_dependencies:
   flutter_test:
     sdk: flutter
