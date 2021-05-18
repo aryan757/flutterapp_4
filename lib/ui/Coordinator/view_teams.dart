@@ -36,6 +36,15 @@ class _ViewTeamState extends State<ViewTeam> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
+                        /*  Text(
+                          document['id'].toString(),
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 18,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ), */
                         Text(
                           document['guide'].toString(),
                           textAlign: TextAlign.center,

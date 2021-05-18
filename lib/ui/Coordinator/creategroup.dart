@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:multi_select_flutter/multi_select_flutter.dart';
 import './Studentclass.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:short_readable_id/short_readable_id.dart';
 
 class CreateGrp extends StatefulWidget {
   @override
@@ -18,6 +19,7 @@ class CreateGrpState extends State<CreateGrp> {
   Student student = Student();
   Teacher teacher = Teacher();
   String _choosenvalue;
+  TextEditingController _controller = TextEditingController();
 
   static List<Student> stu = [
     Student(id: 1, name: "Jatin", usn: "1NT17IS073"),
@@ -59,7 +61,12 @@ class CreateGrpState extends State<CreateGrp> {
   void initState() {
     _selectedstudent2 = stu;
     _selectedstudent3 = teac;
+    _controller.addListener(_onSearchChanged);
     super.initState();
+  }
+
+  _onSearchChanged() {
+    print(_controller);
   }
 
   @override
@@ -93,6 +100,13 @@ class CreateGrpState extends State<CreateGrp> {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
+                TextField(
+                  controller: _controller,
+                  decoration: InputDecoration(prefixIcon: Icon(Icons.search)),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
                 MultiSelectDialogField(
                   items: _items,
                   title: Text("Select Student"),
@@ -196,6 +210,7 @@ class CreateGrpState extends State<CreateGrp> {
                     ),
                     onPressed: () {
                       Map<String, dynamic> data = {
+                        /*  "id": idGenerator.generateReadable(), */
                         "name1": _selectedstudent2[0].name,
                         "usn1": _selectedstudent2[0].usn,
                         "name2": _selectedstudent2[1].name,
